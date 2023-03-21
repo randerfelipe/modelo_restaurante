@@ -6,7 +6,13 @@ import { useState } from "react";
 import Filtros from "./Filtros";
 
 export default function Cardapio(){
+    //constantes, pra puxarem valores 
+    //de outros arquivos e setarem em estados
     const [busca, setBusca] = useState("");
+
+    //Para o caso do filtro, ele tem que começar vazio, logo terá nulo setado
+    const [filtro, setFiltro] = useState<number | null>(null);
+
     return(
         <main>
             <nav className={styles.menu}>
@@ -28,7 +34,10 @@ export default function Cardapio(){
                     
                 </h3>
                 <div className={styles.cardapio__filtros}>
-                    < Filtros />
+                    < Filtros 
+                    filtro={filtro}
+                    setFiltro={setFiltro}
+                    />
                 </div>
             </section>
 
