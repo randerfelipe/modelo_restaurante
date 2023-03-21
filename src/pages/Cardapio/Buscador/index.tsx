@@ -12,6 +12,7 @@ export default function Buscador({busca, setBusca}: Props){
     return(
         <div className={styles.buscador}>
             <input
+                placeholder = "Buscar"
                 value={busca}
                 //onChange cuida da atribuição de valor
                 onChange={(evento)=> setBusca(evento.target.value)}/>

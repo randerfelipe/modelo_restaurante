@@ -33,7 +33,7 @@ export default function Filtros({filtro, setFiltro}: Props){
             //essas opcao estao sendo importadas do json
 
             //Para tornar possível selecionar uma opcao, usa-se o botao abaixo : 
-            <button className={classNames({
+            <button  className={classNames({
                 //utilizando a propriedade do import classnames
                 [styles.filtros__filtro] : true,
                 [styles["filtros__filtro--ativo"]] : filtro === opcao.id
