@@ -11,7 +11,7 @@ interface Props{
 
 export default function Itens(props : Props){
     const[lista, setLista] = useState(cardapio);
-    const {busca, filtro} = props;
+    const {busca, filtro, ordenador} = props;
    
     //tanto testaBusca quanto testaFiltro realizam as funcoes de filtrar e buscar dentro dos itens
 
@@ -26,14 +26,29 @@ export default function Itens(props : Props){
         return true
     }
 
+    function ordenar(novaLista: typeof cardapio){
+        switch(ordenador){
+            case 'porcao':
+                //nesse caso, caso uma porção for maior que outra, ela vem primeiro
+                return novaLista.sort((a, b) => a.size > b.size ? 1 : -1);
+            case 'qtd_pessoas':
+                //nesse caso, quanto mais pessoas servir, mais pra cima
+                return novaLista.sort((a,b) => a.serving > b.serving ? 1 : -1);
+            case 'preco':
+                //nesse caso, quanto mais caro mais pra cima
+                return novaLista.sort((a,b)=> a.price > b.price ? 1 : -1);
+            default:
+                return novaLista;
+            }
+    }
 
     //Atualizador da lista 
     useEffect(()=> {
         const novaLista = cardapio.filter(item=> testaBusca(item.title) 
         && testaFiltro(item.category.id));
-        setLista(novaLista);
+        setLista(ordenar(novaLista));
 
-    },[busca, filtro])
+    },[busca, filtro, ordenador])
 
     return(
         <div className={styles.itens}>
