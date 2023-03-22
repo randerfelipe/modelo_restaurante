@@ -5,6 +5,7 @@ import Buscador from "./Buscador";
 import { useState } from "react";
 import Filtros from "./Filtros";
 import Ordenador from "./Ordenador";
+import Itens from "./Itens";
 
 export default function Cardapio(){
     // pelo principio da responsabilidade única, se usa as const para use state 
@@ -48,6 +49,7 @@ export default function Cardapio(){
                     ordenador={ordenador}
                     setOrdenador={setOrdenador}/>
                 </div>
+                <Itens/>
             </section>
 
         </main>
