@@ -7,12 +7,16 @@ import Filtros from "./Filtros";
 import Ordenador from "./Ordenador";
 
 export default function Cardapio(){
+    // pelo principio da responsabilidade única, se usa as const para use state 
     //constantes, pra puxarem valores 
     //de outros arquivos e setarem em estados
     const [busca, setBusca] = useState("");
 
     //Para o caso do filtro, ele tem que começar vazio, logo terá nulo setado
     const [filtro, setFiltro] = useState<number | null>(null);
+
+    //Para ordenador : 
+    const [ordenador, setOrdenador] = useState("");
 
     return(
         <main>
@@ -40,7 +44,9 @@ export default function Cardapio(){
                     setFiltro={setFiltro}
                     />
 
-                    <Ordenador/>
+                    <Ordenador
+                    ordenador={ordenador}
+                    setOrdenador={setOrdenador}/>
                 </div>
             </section>
 
