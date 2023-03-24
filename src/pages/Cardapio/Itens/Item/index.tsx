@@ -1,5 +1,5 @@
 import styles from './Item.module.scss';
-import cardapio from '../itens.json';
+import cardapio from 'data/cardapio.json';
 import classNames from 'classnames';
 
 //Funcao type está importando os valores do json/backend
