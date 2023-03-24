@@ -19,31 +19,31 @@ interface Props{
 }
 
 export default function Filtros({filtro, setFiltro}: Props){
-    function selecionarFiltro(opcao: IOpcao){
+  function selecionarFiltro(opcao: IOpcao){
 
-        //para delecionar um determinado filtro, usa-se: 
+    //para delecionar um determinado filtro, usa-se: 
 
-        if(filtro === opcao.id ) return(setFiltro(null));
-        return setFiltro(opcao.id);
+    if(filtro === opcao.id ) return(setFiltro(null));
+    return setFiltro(opcao.id);
 
-    }
-    return <div className={styles.filtros}>
+  }
+  return <div className={styles.filtros}>
         
-        {filtros.map((opcao)=>(
-            //essas opcao estao sendo importadas do json
+    {filtros.map((opcao)=>(
+      //essas opcao estao sendo importadas do json
 
-            //Para tornar possível selecionar uma opcao, usa-se o botao abaixo : 
-            <button  className={classNames({
-                //utilizando a propriedade do import classnames
-                [styles.filtros__filtro] : true,
-                [styles["filtros__filtro--ativo"]] : filtro === opcao.id
-            }
+      //Para tornar possível selecionar uma opcao, usa-se o botao abaixo : 
+      <button  className={classNames({
+        //utilizando a propriedade do import classnames
+        [styles.filtros__filtro] : true,
+        [styles['filtros__filtro--ativo']] : filtro === opcao.id
+      }
 
-            )}
-            key={opcao.id} 
-            onClick={()=> selecionarFiltro(opcao)}>
-            {opcao.label}
-            </button>
-        ))}
-    </div>
+      )}
+      key={opcao.id} 
+      onClick={()=> selecionarFiltro(opcao)}>
+        {opcao.label}
+      </button>
+    ))}
+  </div>;
 }
