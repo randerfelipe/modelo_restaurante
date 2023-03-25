@@ -1,4 +1,5 @@
 import Cardapio from 'pages/Cardapio';
+import Menu from './components/Menu';
 import Inicio from 'pages/Inicio';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 //O BowserRouter que permite alternância entre rotas/paginas
@@ -6,6 +7,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 export default function AppRouter() {
   return (
     <Router>
+      <Menu />
       <Routes>
         <Route path='/' element={<Inicio/>} 
         /* Esse primeiro route é quem cria a pagina inicial*//>

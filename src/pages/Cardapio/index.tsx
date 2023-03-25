@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Cardapio.module.scss';
-import {ReactComponent as Logo} from 'assets/logo.svg';
 import Buscador from './Buscador';
 import { useState } from 'react';
 import Filtros from './Filtros';
 import Ordenador from './Ordenador';
 import Itens from './Itens';
+import Menu from 'components/Menu';
 
 export default function Cardapio(){
   // pelo principio da responsabilidade única, se usa as const para use state 
@@ -21,11 +21,6 @@ export default function Cardapio(){
 
   return(
     <main>
-      <nav className={styles.menu}>
-        <Logo/>
-                
-      </nav>
-
       <header className={styles.header}>
         <div className={styles.header__text}>
                     A casa do codigo e da massa

@@ -1,5 +1,6 @@
 import styles from './Inicio.module.scss';
 import cardapio from 'data/cardapio.json';
+import Menu from 'components/Menu';
 
 export default function Inicio() {
   let pratosRecomendados = [...cardapio];
